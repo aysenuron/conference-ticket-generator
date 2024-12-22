@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="relative font-Inconsolata">
+  <img class="fixed bottom-0 right-0 md:hidden lg:hidden -z-20" src="./assets/images/background-mobile.png" alt="background-mobile">
+  <img class="hidden md:block lg:hidden md:fixed top-0 left-0 right-0 -z-30" src="./assets/images/background-tablet.png" alt="background-tablet">
+  <img class="hidden lg:block lg:fixed top-0 left-0 right-0 -z-40" src="./assets/images/background-desktop.png" alt="background-desktop">
+  
+  <img class="fixed top-0 right-0 -z-10" src="./assets/images/pattern-lines.svg" alt="pattern-lines">
+  <img class="fixed top-5 right-0 max-h-16" src="./assets/images/pattern-squiggly-line-top.svg" alt="pattern-squiggly-line-top">
+
+  <img class="fixed bottom-0 left-0 max-h-40 -z-10" src="./assets/images/pattern-squiggly-line-bottom.svg" alt="pattern-squiggly-line-bottom">
+
+  <header class="flex justify-center mt-10 z-10 h-6">
+    <img src="./assets/images/logo-full.svg" alt="logo">
+  </header>
+
+  <main class="text-white mt-10 mb-28 mx-4">
+
+    <div class="z-10 flex flex-col justify-center align-middle space-y-5">
+      <h1 class="font-bold text-xl text-center">
+        Your Journey to Coding <br> Conf 2025 Starts Here!
+      </h1>
+      <p class="text-center text-sm opacity-60">
+        Secure your spot at next year's <br> biggest coding conference.
+      </p>
+    </div>
+
+    <div class="mt-10">
+
+      <div class="flex flex-col space-y-6">
+
+        <div class="flex flex-col space-y-2">
+          <label class="text-sm" for="">Upload Avatar</label>
+
+          <div class="bg-white bg-opacity-10 border border-gray-300 border-dashed p-5 space-y-4 rounded-xl flex flex-col align-middle">
+            <div class="bg-white bg-opacity-10 border border-gray-500 p-4 inline-block mx-auto rounded-2xl">
+              <img src="./assets/images/icon-upload.svg" alt="icon-upload">
+            </div>
+            <p class="opacity-70 text-sm text-center">
+              Drag and drop or click to upload.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex space-x-2 align-middle">
+          <img class="h-6" src="./assets/images/icon-info.svg" alt="icon-info">
+          <p class="opacity-30 text-xs">Upload your photo<br>(JPG or PNG, max size 500KB).</p>
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <label class="text-sm" for="">Full Name</label>
+          <input class="bg-white bg-opacity-10 border border-gray-400 focus:border-white rounded-lg h-10" type="text">
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <label class="text-sm" for="">Email</label>
+          <input class="bg-white bg-opacity-10 border border-gray-400 focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs" placeholder="example@example.com" type="text">
+        </div>
+
+        <div class="flex flex-col space-y-2">
+          <label class="text-sm" for="">GitHub Username</label>
+          <input class="bg-white bg-opacity-10 border border- focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs" placeholder="@yourusername" type="text">
+        </div>
+
+        <button class="bg-[#F67464] text-[#2C000B] font-bold p-3 rounded-xl">Generate My Ticket</button>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
