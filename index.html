@@ -9,6 +9,18 @@
   <title>Frontend Mentor | Conference ticket generator</title>
 
   <link href="./output.css" rel="stylesheet">
+
+  <script src="script.js" defer></script>
+
+  <style>
+    .no-show {
+      display: none;
+    }
+
+    .red-border {
+      border-color: red;
+    }
+  </style>
 </head>
 
 <body class="relative font-Inconsolata">
@@ -36,48 +48,51 @@
       </p>
     </div>
 
+    <form id="ticketForm">
     <div class="mt-10">
 
       <div class="flex flex-col space-y-6">
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="">Upload Avatar</label>
+          <label class="text-sm" for="avatar">Upload Avatar</label>
 
-          <div class="bg-white bg-opacity-10 border border-gray-300 border-dashed p-5 space-y-4 rounded-xl flex flex-col align-middle">
+          <div class="bg-white bg-opacity-10 border border-gray-300 border-dashed p-5 rounded-xl flex justify-center items-center mx-auto space-x-4">
             <div class="bg-white bg-opacity-10 border border-gray-500 p-4 inline-block mx-auto rounded-2xl">
               <img src="./assets/images/icon-upload.svg" alt="icon-upload">
             </div>
-            <p class="opacity-70 text-sm text-center">
-              Drag and drop or click to upload.
-            </p>
+            <input class="text-xs text-center cursor-pointer" type="file" id="image" accept="image/*" required>
           </div>
         </div>
 
         <div class="flex space-x-2 align-middle">
-          <img class="h-6" src="./assets/images/icon-info.svg" alt="icon-info">
-          <p class="opacity-30 text-xs">Upload your photo<br>(JPG or PNG, max size 500KB).</p>
+          <img id="info-icon" class="h-6 cursor-pointer" src="./assets/images/icon-info.svg" alt="icon-info">
+          <p id="info-text" class="opacity-30 text-xs">Upload your photo<br>(JPG or PNG, max size 500KB).</p>
         </div>
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="">Full Name</label>
-          <input class="bg-white bg-opacity-10 border border-gray-400 focus:border-white rounded-lg h-10" type="text">
+          <label class="text-sm" for="name">Full Name</label>
+          <input id="full-name" class="bg-white bg-opacity-10 border border-gray-400 focus:border-white hover:bg-opacity-20 rounded-lg h-10 pl-4 placeholder:text-xs text-xs" type="text" required>
+          <p id="nameErrorMessage" class="text-red-500 text-xs hidden">Name field cannot include numbers.</p>
         </div>
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="">Email</label>
-          <input class="bg-white bg-opacity-10 border border-gray-400 focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs" placeholder="example@example.com" type="text">
+          <label class="text-sm" for="email">Email</label>
+          <input id="email" class="bg-white bg-opacity-10 border border-gray-400 focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs text-xs hover:bg-opacity-20" placeholder="example@example.com" type="text" required>
+          <p id="emailErrorMessage" class="text-red-500 text-xs hidden">Please enter a valid email.</p>
         </div>
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="">GitHub Username</label>
-          <input class="bg-white bg-opacity-10 border border- focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs" placeholder="@yourusername" type="text">
+          <label class="text-sm" for="username">GitHub Username</label>
+          <input id="username" class="bg-white bg-opacity-10 border border- focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs text-xs hover:bg-opacity-20" placeholder="@yourusername" type="text" required>
+          <p id="usernameErrorMessage" class="text-red-500 text-xs hidden">Don't forget to include @.</p>
         </div>
 
-        <button class="bg-[#F67464] text-[#2C000B] font-bold p-3 rounded-xl">Generate My Ticket</button>
+        <button type="submit" class="bg-[#F67464] text-[#2C000B] font-bold p-3 rounded-xl">Generate My Ticket</button>
 
       </div>
 
     </div>
+  </form>
 
   </main>
 
