@@ -10,16 +10,17 @@ const usernameErrorMessage = document.querySelector("#usernameErrorMessage");
 
 const imageInput = document.querySelector("#imageInput");
 
-const ticketName = document.querySelector("#ticket-name");
+const displayName = document.querySelector("#ticket-name");
+const displayEmail = document.querySelector("#ticket-email");
 
 const form = document.querySelector("#ticketForm");
 
-function displayName (input, ticketField) {
-    let input = localStorage.getItem('input');
-    if (input) {
-        ticketField.textContent = input;
-    }
-}
+const ticketAvatar = document.querySelector("#ticketAvatar");
+const ticketName = document.querySelector("#ticketName");
+const ticketUsername = document.querySelector("#ticketUsername");
+
+const img = document.createElement("img");
+
 
 function displayError(input, message) {
     input.classList.add("red-border");
@@ -58,8 +59,7 @@ function usernameError(input) {
     }
 }
 
-infoIcon.addEventListener("click", () => infoText.classList.toggle("no-show"));
-
+if (form) {
 fullName.addEventListener("input", () => nameError(fullName));
 email.addEventListener("input", () => emailError(email));
 userName.addEventListener("input", () => usernameError(userName));
@@ -72,7 +72,7 @@ imageInput.addEventListener("change", function(event) {
         const reader = new FileReader();
 
         reader.onload = function(e) {
-            const img = document.createElement("img");
+            
             img.src = e.target.result;
 
             const preview = document.querySelector("#preview");
@@ -83,14 +83,43 @@ imageInput.addEventListener("change", function(event) {
         reader.readAsDataURL(file);
     }
 });
+}
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+if (form) {
+    // This code only runs on the form page (where the user submits their name)
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        localStorage.setItem("fullName", fullName.value);
+        localStorage.setItem("email", email.value);
+        localStorage.setItem("username", userName.value);
 
-    localStorage.setItem('fullName', fullName.value);
+        // Convert the image to a Data URL and save it to localStorage
+        const file = imageInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                localStorage.setItem("image", e.target.result); // Save the image as a Data URL
+            };
+            reader.readAsDataURL(file);
 
-    window.location.href = './ticket.html'
+        window.location.href = "ticket.html";
+}});
+} else if (displayName && displayEmail) {
+    // This code only runs on the ticket page (where the name is displayed)
+    function displayInput() {
+        const inputName = localStorage.getItem("fullName");
+        const inputEmail = localStorage.getItem("email");
+        const inputUsername = localStorage.getItem("username");
+        const inputImage = localStorage.getItem("image");
+        if (inputName && inputEmail) {
+            displayName.textContent = inputName;
+            ticketName.textContent = inputName;
+            displayEmail.textContent = inputEmail;
+            ticketUsername.textContent = inputUsername;
+            ticketAvatar.src = inputImage;
+        } 
+    }
+    document.addEventListener("DOMContentLoaded", displayInput);
+}
 
-    displayName(fullName, ticketName);
-});
 

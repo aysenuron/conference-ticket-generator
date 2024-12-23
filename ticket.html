@@ -41,11 +41,39 @@
 
     <div class="z-10 flex flex-col justify-center align-middle space-y-5">
       <h1 class="font-bold text-xl text-center md:text-5xl">
-        Congrats, <span id="ticket-name"></span>! Your ticket is ready.
+        Congrats, <span class="text-orange-500" id="ticket-name"></span>! Your ticket is ready.
       </h1>
       <p class="text-center text-sm opacity-60 md:text-lg">
-        We've emailed your ticket to <span id="ticket-email"></span> and will send updates in the run up to the event.
+        We've emailed your ticket to <span class="text-orange-500 opacity-100" id="ticket-email"></span> and will send updates in the run up to the event.
       </p>
+    </div>
+
+    <div class="mt-10 mx-auto">
+      <div class="relative flex justify-center items-center" id="ticket-bg">
+        <img class="absolute top-0 right-auto left-auto -z-10" src="./assets/images/pattern-ticket.svg" alt="pattern-ticket">
+
+        <div class="grid grid-cols-3 p-5 md:py-14 md:gap-10">
+          <div class="col-span-2 flex flex-col gap-4 md:gap-8">
+            <div>
+              <img src="./assets/images/logo-full.svg" alt="logo-full">
+              <p class="text-xs opacity-50 mt-4">Jun 13, 2025 / Izmir</p>
+            </div>
+            <div class="mt-4 flex space-x-2">
+              <div><img class="h-12 md:h-16 rounded-md" id="ticketAvatar" src="" alt=""></div>
+              <div>
+                <p class="text-sm md:text-xl mb-1" id="ticketName"></p>
+                <div class="flex space-x-2 items-center">
+                  <img src="./assets/images/icon-github.svg" alt="">
+                  <p class="text-xs md:text-lg opacity-50" id="ticketUsername"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 rotate-90 opacity-50 md:text-2xl mr-6">
+            <p>#00001</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     
