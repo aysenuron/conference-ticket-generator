@@ -29,22 +29,22 @@
   <img class="hidden lg:block lg:fixed top-0 left-0 right-0 -z-40" src="./assets/images/background-desktop.png" alt="background-desktop">
   
   <img class="fixed top-0 right-0 -z-10" src="./assets/images/pattern-lines.svg" alt="pattern-lines">
-  <img class="fixed top-5 right-0 max-h-16" src="./assets/images/pattern-squiggly-line-top.svg" alt="pattern-squiggly-line-top">
+  <img class="fixed top-5 right-0 h-16 md:h-60" src="./assets/images/pattern-squiggly-line-top.svg" alt="pattern-squiggly-line-top">
 
-  <img class="fixed bottom-0 left-0 max-h-40 -z-10" src="./assets/images/pattern-squiggly-line-bottom.svg" alt="pattern-squiggly-line-bottom">
+  <img class="fixed bottom-0 left-0 h-40 md:h-96 -z-10" src="./assets/images/pattern-squiggly-line-bottom.svg" alt="pattern-squiggly-line-bottom">
 
-  <header class="flex justify-center mt-10 z-10 h-6">
-    <img src="./assets/images/logo-full.svg" alt="logo">
+  <header class="flex justify-center mt-10 z-10 h-6 md:h-8 lg:h-10 cursor-pointer">
+    <img href="./index.html" src="./assets/images/logo-full.svg" alt="logo"> 
   </header>
 
-  <main class="text-white mt-10 mb-28 mx-4">
+  <main class="text-white mt-10 mb-28 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-sm px-4 mx-auto">
 
     <div class="z-10 flex flex-col justify-center align-middle space-y-5">
-      <h1 class="font-bold text-xl text-center">
-        Your Journey to Coding <br> Conf 2025 Starts Here!
+      <h1 class="font-bold text-xl text-center md:text-5xl">
+        Your Journey to Coding Conf 2025 Starts Here!
       </h1>
-      <p class="text-center text-sm opacity-60">
-        Secure your spot at next year's <br> biggest coding conference.
+      <p class="text-center text-sm opacity-60 md:text-lg">
+        Secure your spot at next year's biggest coding conference.
       </p>
     </div>
 
@@ -54,13 +54,13 @@
       <div class="flex flex-col space-y-6">
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="avatar">Upload Avatar</label>
+          <label class="text-sm md:text-lg" for="avatar">Upload Avatar</label>
 
-          <div class="bg-white bg-opacity-10 border border-gray-300 border-dashed p-5 rounded-xl flex justify-center items-center mx-auto space-x-4">
-            <div class="bg-white bg-opacity-10 border border-gray-500 p-4 inline-block mx-auto rounded-2xl">
+          <div class="bg-white bg-opacity-10 border border-gray-300 border-dashed p-5 rounded-xl flex flex-col justify-center items-center space-y-4">
+            <div id="preview" class="bg-white bg-opacity-10 border border-gray-500 p-4 mx-auto rounded-2xl max-w-24">
               <img src="./assets/images/icon-upload.svg" alt="icon-upload">
             </div>
-            <input class="text-xs text-center cursor-pointer" type="file" id="image" accept="image/*" required>
+            <input id="imageInput" class="text-xs text-center cursor-pointer" type="file" id="image" accept="image/*" required>
           </div>
         </div>
 
@@ -70,24 +70,24 @@
         </div>
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="name">Full Name</label>
+          <label class="text-sm md:text-lg" for="name">Full Name</label>
           <input id="full-name" class="bg-white bg-opacity-10 border border-gray-400 focus:border-white hover:bg-opacity-20 rounded-lg h-10 pl-4 placeholder:text-xs text-xs" type="text" required>
           <p id="nameErrorMessage" class="text-red-500 text-xs hidden">Name field cannot include numbers.</p>
         </div>
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="email">Email</label>
+          <label class="text-sm md:text-lg" for="email">Email</label>
           <input id="email" class="bg-white bg-opacity-10 border border-gray-400 focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs text-xs hover:bg-opacity-20" placeholder="example@example.com" type="text" required>
           <p id="emailErrorMessage" class="text-red-500 text-xs hidden">Please enter a valid email.</p>
         </div>
 
         <div class="flex flex-col space-y-2">
-          <label class="text-sm" for="username">GitHub Username</label>
+          <label class="text-sm md:text-lg" for="username">GitHub Username</label>
           <input id="username" class="bg-white bg-opacity-10 border border- focus:border-white rounded-lg h-10 pl-4 placeholder:text-xs text-xs hover:bg-opacity-20" placeholder="@yourusername" type="text" required>
           <p id="usernameErrorMessage" class="text-red-500 text-xs hidden">Don't forget to include @.</p>
         </div>
 
-        <button type="submit" class="bg-[#F67464] text-[#2C000B] font-bold p-3 rounded-xl">Generate My Ticket</button>
+        <button type="submit" class="bg-[#F67464] hover:bg-[#f16451] focus:bg-[#f49b8f] text-[#2C000B] font-bold p-3 rounded-xl">Generate My Ticket</button>
 
       </div>
 

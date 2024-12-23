@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Ticket</title>
+
+  <link href="./output.css" rel="stylesheet">
+
+  <script src="script.js" defer></script>
+
+  <style>
+    .no-show {
+      display: none;
+    }
+
+    .red-border {
+      border-color: red;
+    }
+  </style>
+</head>
+
+<body class="relative font-Inconsolata">
+  <img class="fixed bottom-0 right-0 md:hidden lg:hidden -z-20" src="./assets/images/background-mobile.png" alt="background-mobile">
+  <img class="hidden md:block lg:hidden md:fixed top-0 left-0 right-0 -z-30" src="./assets/images/background-tablet.png" alt="background-tablet">
+  <img class="hidden lg:block lg:fixed top-0 left-0 right-0 -z-40" src="./assets/images/background-desktop.png" alt="background-desktop">
+  
+  <img class="fixed top-0 right-0 -z-10" src="./assets/images/pattern-lines.svg" alt="pattern-lines">
+  <img class="fixed top-5 right-0 h-16 md:h-60" src="./assets/images/pattern-squiggly-line-top.svg" alt="pattern-squiggly-line-top">
+
+  <img class="fixed bottom-0 left-0 h-40 md:h-96 -z-10" src="./assets/images/pattern-squiggly-line-bottom.svg" alt="pattern-squiggly-line-bottom">
+
+  <header class="flex justify-center mt-10 z-10 h-6 md:h-8 lg:h-10 cursor-pointer">
+    <img href="./index.html" src="./assets/images/logo-full.svg" alt="logo"> 
+  </header>
+
+  <main class="text-white mt-10 mb-28 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-sm px-4 mx-auto">
+
+    <div class="z-10 flex flex-col justify-center align-middle space-y-5">
+      <h1 class="font-bold text-xl text-center md:text-5xl">
+        Congrats, <span id="ticket-name"></span>! Your ticket is ready.
+      </h1>
+      <p class="text-center text-sm opacity-60 md:text-lg">
+        We've emailed your ticket to <span id="ticket-email"></span> and will send updates in the run up to the event.
+      </p>
+    </div>
+
+    
+
+  </main>
+
+</body>
+</html>
